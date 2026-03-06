@@ -1,0 +1,460 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    gap: 110px;
+}
+
+.wsoz {
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.wsoz p {
+    font-size: 25px;
+}
+
+.rsoz {
+    margin-top: 170px;
+    margin-left: 170px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.ysoz {
+    background: #969696;
+    padding: 15px;
+}
+
+.usoz {
+    background: #3d3d33;
+    color: white;
+}
+
+.tsoz {
+    color: #efba8a;
+    font-size: 30px;
+}
+
+.psoz {
+    color: #efba8a;
+    font-size: 20px;
+    margin-left: 111px;
+}
+
+.ssoz {
+    color: #FFFFFF;
+    background-color: #2B2B2B;
+    padding: 20px;
+    margin-left: 5px;
+}
+
+
+.asoz {
+    color: #FFFFFF;
+    background-color: #2B2B2B;
+    padding: 20px;
+    margin-left: 30px;
+}
+
+.asoz:hover {
+    color: #FFFFFF;
+    background-color: #fab401;
+    padding: 20px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.wrapper img {
+    margin-left: 30px;
+}
+
+.wrapper h3 {
+    margin-left: 40px;
+}
+
+.birrasm:hover {
+    transform: scale(1.2);
+}
+
+.ikkirasm:hover {
+    transform: scale(1.2);
+}
+
+.uchrasm:hover {
+    transform: scale(1.2);
+}
+
+.birrasm {
+    width: 200px;
+    height: 400px;
+    margin: 0px;
+    box-shadow: 1px 4px 10px;
+}
+
+.ikkirasm {
+    width: 200px;
+    margin: 0px;
+    box-shadow: 1px 4px 10px;
+}
+
+.uchrasm {
+    width: 200px;
+    margin: 0px;
+    box-shadow: 1px 4px 10px;
+}
+
+.dsoz {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.store-story {
+    display: flex;
+}
+
+.story h2 {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 20px;
+}
+
+.story {
+    margin-left: 190px;
+    margin-top: 130px;
+}
+
+.gsoz {
+    font-size: 36px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.fsoz {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.hsoz {
+    background-color: #2B2B2B;
+    color: white;
+    width: 140px;
+    height: 60px;
+}
+
+.products-wrapper {
+    display: flex;
+    justify-content: space-around;
+
+    position: relative;
+}
+
+.first-img:hover {
+    transform: scale(1.2);
+}
+
+.second-img:hover {
+    transform: scale(1.2);
+}
+
+.third-img:hover {
+    transform: scale(1.2);
+}
+
+.product-name {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.product-price {
+    color: #FFB568;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin-left: 70px;
+}
+
+.first-img {
+    background-color: #ffffff;
+    width: 200px;
+    height: 276px;
+    box-shadow: 1px 4px 10px;
+}
+
+.add-to-cart {
+    position: absolute;
+    margin-left: 169px;
+    margin-top: 21px;
+}
+
+.product-img {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.second-img {
+    background-color: #ffffff;
+    width: 200px;
+    height: 276px;
+    box-shadow: 1px 4px 10px;
+}
+
+.third-img {
+    background-color: #ffffff;
+    width: 200px;
+    height: 276px;
+    box-shadow: 1px 4px 10px;
+}
+
+.second-products-wrapper {
+    display: flex;
+
+
+    position: relative;
+}
+
+.fourth-img {
+    background-color: #ffffff;
+    width: 200px;
+    height: 276px;
+    box-shadow: 1px 4px 10px;
+    margin-left: 115px;
+}
+
+.fifth-img {
+    background-color: #ffffff;
+    width: 200px;
+    height: 276px;
+    box-shadow: 1px 4px 10px;
+    margin-left: 225px;
+}
+
+.fourth-img:hover {
+    transform: scale(1.2);
+}
+
+.fifth-img:hover {
+    transform: scale(1.2);
+}
+
+.store-review h3 {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.store-review p {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.store-review {
+    display: flex;
+}
+
+.store-review-words {
+    margin-top: 200px;
+    margin-left: 172px;
+}
+
+.store-review-img {
+    margin-top: 100px;
+    margin-left: 222px;
+}
+
+.new-arrivals-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.arrivals-first-img {
+    background-color: #ffffff;
+    width: 200px;
+    box-shadow: 1px 4px 10px;
+}
+
+.arrivals-second-img {
+    background-color: #ffffff;
+    width: 200px;
+    box-shadow: 1px 4px 10px;
+}
+
+.arrivals-third-img {
+    background-color: #ffffff;
+    width: 200px;
+    box-shadow: 1px 4px 10px;
+}
+
+.arrivals-fourth-img {
+    background-color: #ffffff;
+    width: 200px;
+    box-shadow: 1px 4px 10px;
+}
+
+.arrivals-first-img:hover {
+    transform: scale(1.2);
+}
+
+.arrivals-second-img:hover {
+    transform: scale(1.2);
+}
+
+.arrivals-third-img:hover {
+    transform: scale(1.2);
+}
+
+.arrivals-fourth-img:hover {
+    transform: scale(1.2);
+}
+
+.new-arrivels-img {
+    margin-left: 40px;
+}
+
+.new-arrivals-name {
+    margin-left: 30px;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.new-arrivals-price {
+    color: #FFB568;
+    margin-left: 80px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.arrivals-new {
+    background-color: #FFB568;
+    color: white;
+    border: none;
+    padding: 10px;
+
+    position: absolute;
+}
+
+.store-subscribe {
+    display: flex;
+    background: #FFB568;
+    height: 315px;
+}
+
+.subscribe-box {
+    display: flex;
+    align-items: center;
+    margin-left: 170px;
+}
+
+.subscribe-box input {
+    width: 200px;
+    height: 59px;
+    padding: 15px 0px;
+    border: none;
+    font-size: 16px;
+}
+
+.subscribe-box button {
+    width: 120px;
+    height: 59px;
+    background: #2B2B2B;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: 400;
+
+}
+
+.subscribe {
+    margin-top: 72px;
+    margin-left: 72px;
+}
+
+.subscribe-comment {
+    margin-bottom: 72px;
+    margin-left: 72px;
+}
+
+.store-information {
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
