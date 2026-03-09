@@ -7,6 +7,7 @@
 .container {
     width: 1280px;
     margin: 0 auto;
+    background-color: #1F1F1F;
 }
 
 .header {
@@ -26,8 +27,21 @@
         "wdth" 100;
 }
 
-.wsoz p {
+.wsoz h1 {
+    margin-left: 10px;
+    color: #F2F2F2;
+}
+
+.ww {
+    font-weight: 400;
     font-size: 25px;
+    color: #F2F2F2;
+}
+
+.qq {
+    font-weight: 400;
+    font-size: 25px;
+    color: #FFB568;
 }
 
 .rsoz {
@@ -39,6 +53,14 @@
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+}
+
+.rsoz h1 {
+    color: #F2F2F2;
+}
+
+.rsoz p {
+    color: #F2F2F2;
 }
 
 .ysoz {
@@ -54,6 +76,10 @@
 .tsoz {
     color: #efba8a;
     font-size: 30px;
+}
+
+.rr {
+    color: #F2F2F2;
 }
 
 .psoz {
@@ -110,6 +136,7 @@
 }
 
 .birrasm {
+    background-color: #333333;
     width: 200px;
     height: 400px;
     margin: 0px;
@@ -117,21 +144,24 @@
 }
 
 .ikkirasm {
+    background-color: #333333;
     width: 200px;
     margin: 0px;
     box-shadow: 1px 4px 10px;
 }
 
 .uchrasm {
+    background-color: #333333;
     width: 200px;
     margin: 0px;
     box-shadow: 1px 4px 10px;
 }
 
 .dsoz {
+    color: #F2F2F2;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 300;
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
@@ -142,9 +172,10 @@
 }
 
 .story h2 {
+    color: #F2F2F2;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
@@ -157,6 +188,7 @@
 }
 
 .gsoz {
+    color: #F2F2F2;
     font-size: 36px;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
@@ -167,6 +199,7 @@
 }
 
 .fsoz {
+    color: #F2F2F2;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
@@ -174,6 +207,10 @@
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+}
+
+.ee {
+    margin-left: 50px;
 }
 
 .hsoz {
@@ -203,6 +240,7 @@
 }
 
 .product-name {
+    color: #F2F2F2;
     font-size: 14px;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
@@ -212,6 +250,10 @@
         "wdth" 100;
     margin-top: 10px;
     margin-left: 50px;
+}
+
+.tt {
+    color: #F2F2F2;
 }
 
 .product-price {
@@ -227,7 +269,7 @@
 }
 
 .first-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     height: 276px;
     box-shadow: 1px 4px 10px;
@@ -245,14 +287,14 @@
 }
 
 .second-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     height: 276px;
     box-shadow: 1px 4px 10px;
 }
 
 .third-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     height: 276px;
     box-shadow: 1px 4px 10px;
@@ -266,7 +308,7 @@
 }
 
 .fourth-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     height: 276px;
     box-shadow: 1px 4px 10px;
@@ -274,7 +316,7 @@
 }
 
 .fifth-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     height: 276px;
     box-shadow: 1px 4px 10px;
@@ -325,31 +367,35 @@
 
 .new-arrivals-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     position: relative;
 }
 
+.yy{
+    color: #F2F2F2;
+}
+
 .arrivals-first-img {
-    background-color: #ffffff;
+    background-color:#333333;
     width: 200px;
     box-shadow: 1px 4px 10px;
 }
 
 .arrivals-second-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     box-shadow: 1px 4px 10px;
 }
 
 .arrivals-third-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     box-shadow: 1px 4px 10px;
 }
 
 .arrivals-fourth-img {
-    background-color: #ffffff;
+    background-color: #333333;
     width: 200px;
     box-shadow: 1px 4px 10px;
 }
@@ -375,6 +421,7 @@
 }
 
 .new-arrivals-name {
+    color: #F2F2F2;
     margin-left: 30px;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
@@ -448,6 +495,7 @@
 }
 
 .store-information {
+    color: #F2F2F2;
     display: flex;
     justify-content: space-around;
     font-size: 16px;
