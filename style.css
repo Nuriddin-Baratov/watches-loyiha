@@ -4,13 +4,171 @@
     box-sizing: border-box;
 }
 
-.container {
-    width: 1280px;
-    margin: 0 auto;
+/* From Uiverse.io by kiranmayee-abbireddy */
+.uiverse-midnight-sky {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    background-color: #050505;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Base Sky Layer */
+.uiverse-midnight-sky .sky-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background: #050505;
+}
+
+/* Generic star layer style */
+.uiverse-midnight-sky .stars {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat;
+    pointer-events: none;
+}
+
+/* Layer 1: Small fast twinkling stars - High density */
+.uiverse-midnight-sky .stars-1 {
+    background-image: radial-gradient(1px 1px at 10% 10%, #fff, transparent),
+        radial-gradient(1px 1px at 30% 20%, #fff, transparent),
+        radial-gradient(1px 1px at 50% 50%, #fff, transparent),
+        radial-gradient(1px 1px at 70% 30%, #fff, transparent),
+        radial-gradient(1px 1px at 90% 10%, #fff, transparent);
+    background-size: 200px 200px;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Layer 2: Medium slower twinkling stars */
+.uiverse-midnight-sky .stars-2 {
+    background-image: radial-gradient(1.5px 1.5px at 20% 40%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 60% 85%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 85% 65%, #fff, transparent);
+    background-size: 300px 300px;
+    animation: twinkle 5s ease-in-out infinite 1s;
+}
+
+/* Layer 3: Larger, very slow twinkling stars */
+.uiverse-midnight-sky .stars-3 {
+    background-image: radial-gradient(2px 2px at 40% 70%, #fff, transparent),
+        radial-gradient(2px 2px at 10% 80%, #fff, transparent),
+        radial-gradient(2px 2px at 80% 40%, #fff, transparent);
+    background-size: 400px 400px;
+    animation: twinkle 7s ease-in-out infinite 2s;
+}
+
+/* Meteor / Shooting Star Layer */
+.uiverse-midnight-sky .meteor {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Meteor Tail */
+.uiverse-midnight-sky .meteor::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+/* Meteor Instances with staggered starts */
+.uiverse-midnight-sky .m1 {
+    top: 10%;
+    left: 110%;
+    animation: shoot 8s linear infinite;
+}
+
+.uiverse-midnight-sky .m2 {
+    top: 30%;
+    left: 110%;
+    animation: shoot 12s linear infinite 4s;
+}
+
+.uiverse-midnight-sky .m3 {
+    top: 50%;
+    left: 110%;
+    animation: shoot 10s linear infinite 2s;
+}
+
+/* The Moon */
+.uiverse-midnight-sky .moon {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 15px 15px 0 0 #fdfbd3;
+    filter: drop-shadow(0 0 15px rgba(253, 251, 211, 0.4));
+    z-index: 10;
+}
+
+/* Twinkle Animation */
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+/* Shooting Star Animation - Using % instead of vw/vh */
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-35deg);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    15% {
+        transform: translateX(-1500px) translateY(1000px) rotate(-35deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-1500px) translateY(1000px) rotate(-35deg);
+        opacity: 0;
+    }
+}
+
+
+body {
     background-color: #1F1F1F;
 }
 
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
 .header {
+    padding: 30px 40px;
     display: flex;
     gap: 110px;
 }
@@ -47,12 +205,9 @@
 .rsoz {
     margin-top: 170px;
     margin-left: 170px;
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
+    font-family: "Rubik Wet Paint", system-ui;
+    font-weight: 300;
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
 }
 
 .rsoz h1 {
@@ -77,6 +232,8 @@
     color: #efba8a;
     font-size: 30px;
 }
+
+
 
 .rr {
     color: #F2F2F2;
@@ -372,12 +529,12 @@
     position: relative;
 }
 
-.yy{
+.yy {
     color: #F2F2F2;
 }
 
 .arrivals-first-img {
-    background-color:#333333;
+    background-color: #333333;
     width: 200px;
     box-shadow: 1px 4px 10px;
 }
@@ -505,4 +662,697 @@
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.Btn {
+    margin-top: 20px;
+    margin-left: 24px;
+    width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+    background-size: 250%;
+    background-position: left;
+    color: #ffd277;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+
+.Btn::before {
+    position: absolute;
+    content: "ADD TO CART";
+    color: #ffd277;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 90%;
+    border-radius: 8px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    background-size: 200%;
+}
+
+.Btn:hover {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.Btn:hover::before {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.Btn:active {
+    transform: scale(0.95);
+}
+
+/* From Uiverse.io by StealthWorm */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    overflow: hidden;
+    height: 3rem;
+    background-size: 300% 300%;
+    cursor: pointer;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#212121, #212121),
+        linear-gradient(137.48deg,
+            #ffdb3b 10%,
+            #fec853 45%,
+            #eaaf51 67%,
+            #ff9100 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+#container-stars {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+}
+
+strong {
+    z-index: 2;
+    font-family: "Avalors Personal Use";
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-shadow: 0 0 4px white;
+}
+
+#glow {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+}
+
+.circle {
+    width: 100%;
+    height: 30px;
+    filter: blur(2rem);
+    animation: pulse_3011 4s infinite;
+    z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+    background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+    background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+    z-index: 1;
+    background-color: #212121;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn:active {
+    border: double 4px #fe53bb;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: none;
+}
+
+.btn:active .circle {
+    background: #fe53bb;
+}
+
+#stars {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+}
+
+#stars::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+}
+
+#stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 500%;
+    animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-135rem);
+    }
+}
+
+@keyframes animStarRotate {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes gradient_301 {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse_3011 {
+    0% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* From Uiverse.io by mobinkakei */
+.s {
+    --color1: #d59b43f7;
+    --color2: #e8f04ef0;
+    perspective: 1000px;
+    padding: 1em 1em;
+    background: linear-gradient(var(--color1), var(--color2));
+    border: none;
+    outline: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 10px 10px #000;
+    cursor: pointer;
+    transform: rotateX(70deg) rotateZ(30deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.s::before {
+    content: "";
+    width: 100%;
+    height: 15px;
+    background-color: var(--color2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+
+.s::after {
+    content: "";
+    width: 15px;
+    height: 100%;
+    background-color: var(--color1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+}
+
+.s:hover {
+    transform: rotateX(30deg) rotateZ(0);
+}
+
+/* From Uiverse.io by elijahgummer */
+.golden-button {
+    touch-action: manipulation;
+    display: inline-block;
+    outline: none;
+    font-family: inherit;
+    font-size: 1em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.3em;
+    height: 2.75em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0 1em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+        inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    background-image: linear-gradient(160deg,
+            #a54e07,
+            #b47e11,
+            #fef1a2,
+            #bc881b,
+            #a54e07);
+    border: 1px solid #a55d07;
+    color: rgb(120, 50, 5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.golden-button:focus,
+.golden-button:hover {
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+        inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    border: 1px solid rgba(165, 93, 7, 0.6);
+    color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+        inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+/* From Uiverse.io by elijahgummer */
+.golden-btn {
+    touch-action: manipulation;
+    display: inline-block;
+    outline: none;
+    font-family: inherit;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.3em;
+    height: 2.75em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0 1em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+        inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    background-image: linear-gradient(160deg,
+            #a54e07,
+            #b47e11,
+            #fef1a2,
+            #bc881b,
+            #a54e07);
+    border: 1px solid #a55d07;
+    color: rgb(120, 50, 5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.golden-btn:focus,
+.golden-btn:hover {
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+        inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    border: 1px solid rgba(165, 93, 7, 0.6);
+    color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-btn:active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+        inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */
+.ss {
+    width: 200px;
+    height: 400px;
+    gap: 10px;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    font-weight: 900;
+    transition-duration: .2s;
+    background: linear-gradient(0deg, #000, #272727);
+}
+
+.ss:before,
+.ss:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+            #0000ff, #00ff00, #ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.ss:after {
+    filter: blur(100px);
+}
+
+/* From Uiverse.io by dopekid_9309 */
+.comic-brutal-button-container {
+    margin-top: 200px;
+    --primary-color: #ff3d3d;
+    --secondary-color: #3d3dff;
+    --text-color: #000000;
+    --accent-color: #ffef00;
+    --panel-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.75);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+.comic-brutal-button {
+    position: relative;
+    font-size: 1.5em;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    transform: rotate(-2deg);
+    transform-origin: center;
+    transition: transform 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.button-inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.8em 1.5em;
+    z-index: 3;
+    overflow: hidden;
+    transform: skew(-3deg, 1deg);
+    transition: transform 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+    clip-path: polygon(0% 10%,
+            3% 0%,
+            97% 0%,
+            100% 10%,
+            100% 90%,
+            97% 100%,
+            3% 100%,
+            0% 90%);
+}
+
+.button-text {
+    position: relative;
+    font-weight: 900;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 5;
+    color: var(--text-color);
+    text-shadow:
+        0.05em 0.05em 0 var(--panel-color),
+        -0.05em -0.05em 0 var(--panel-color),
+        0.05em -0.05em 0 var(--panel-color),
+        -0.05em 0.05em 0 var(--panel-color);
+    transform: rotate(2deg);
+}
+
+.button-frame {
+    position: absolute;
+    top: -0.3em;
+    left: -0.3em;
+    right: -0.3em;
+    bottom: -0.3em;
+    background-color: var(--accent-color);
+    border: 0.15em solid var(--text-color);
+    z-index: 1;
+    transition: transform 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.button-shadow {
+    position: absolute;
+    top: 0.4em;
+    left: 0.4em;
+    right: -0.4em;
+    bottom: -0.4em;
+    background-color: var(--shadow-color);
+    z-index: 0;
+    transition: all 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Halftone effect using CSS */
+.halftone-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 30% 30%,
+            rgba(0, 0, 0, 0.2) 0.1em,
+            transparent 0.1em);
+    background-size: 0.5em 0.5em;
+    background-position: 0 0;
+    opacity: 0.3;
+    z-index: 2;
+    mix-blend-mode: multiply;
+}
+
+/* Ink splatter effect using CSS gradients */
+.ink-splatter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    background: radial-gradient(circle at 20% 30%,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.08) 20%,
+            transparent 50%),
+        radial-gradient(circle at 70% 65%,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.08) 25%,
+            transparent 50%),
+        radial-gradient(circle at 40% 50%,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.08) 30%,
+            transparent 60%),
+        radial-gradient(circle at 85% 15%,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.08) 15%,
+            transparent 40%);
+}
+
+/* Button hover state */
+.comic-brutal-button:hover {
+    transform: rotate(-1deg) scale(1.05);
+}
+
+.comic-brutal-button:hover .button-inner {
+    transform: skew(-5deg, 2deg);
+    background-color: var(--secondary-color);
+}
+
+.comic-brutal-button:hover .button-text {
+    color: var(--panel-color);
+    text-shadow:
+        0.05em 0.05em 0 var(--text-color),
+        -0.05em -0.05em 0 var(--text-color),
+        0.05em -0.05em 0 var(--text-color),
+        -0.05em 0.05em 0 var(--text-color);
+}
+
+.comic-brutal-button:hover .button-shadow {
+    transform: translate(0.2em, 0.2em);
+}
+
+.comic-brutal-button:hover .ink-splatter {
+    opacity: 1;
+}
+
+/* Button focus state */
+.comic-brutal-button:focus {
+    outline: none;
+}
+
+.comic-brutal-button:focus .button-frame {
+    border-color: var(--secondary-color);
+}
+
+/* Button active state */
+.comic-brutal-button:active {
+    transform: rotate(0) scale(0.98);
+}
+
+.comic-brutal-button:active .button-inner {
+    transform: skew(0, 0);
+}
+
+.comic-brutal-button:active .button-shadow {
+    transform: translate(0.1em, 0.1em);
+}
+
+/* Comic burst animation */
+@keyframes burst {
+    0% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.comic-brutal-button:active .button-text {
+    animation: burst 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Add comic-style border on focus */
+@keyframes dash {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+.comic-brutal-button:focus::after {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    left: -0.5em;
+    right: -0.5em;
+    bottom: -0.5em;
+    border: 0.15em dashed var(--text-color);
+    z-index: 0;
+    animation: dash 1s linear infinite;
+    pointer-events: none;
+}
+
+/* Additional brutalist comic book elements */
+.comic-brutal-button::before {
+    content: "";
+    position: absolute;
+    top: 0.4em;
+    left: 0.8em;
+    width: 1em;
+    height: 1em;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.comic-brutal-button:hover::before {
+    opacity: 0.7;
+}
+
+/* Action lines on click */
+@keyframes action-lines {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+.comic-brutal-button:active::before {
+    content: "";
+    position: absolute;
+    top: -1em;
+    left: -1em;
+    right: -1em;
+    bottom: -1em;
+    background-image: radial-gradient(var(--text-color) 0%, transparent 70%),
+        repeating-conic-gradient(transparent 0%,
+            transparent 5%,
+            var(--text-color) 5%,
+            var(--text-color) 6%);
+    opacity: 0;
+    z-index: 6;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    animation: action-lines 0.5s ease-out forwards;
 }
