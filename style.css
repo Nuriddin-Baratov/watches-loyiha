@@ -176,6 +176,12 @@ header {
     padding: 30px 40px;
     display: flex;
     gap: 110px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+
+    background-color: #2121215e;
+      backdrop-filter: blur(2px);
 }
 
 .wsoz {
